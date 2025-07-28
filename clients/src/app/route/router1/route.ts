@@ -8,7 +8,7 @@ export  async function GET(req:NextRequest){
     const value =params.searchParams.get("video_id")
     console.log("going id to backend:",value)
   
-    const result = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/video/?video_id=${value}`)
+    const result = await axios.get(`${process.env.BACKEND_URL}/video/?video_id=${value}`)
     
     const data= result.data;
     console.log("route:",data)
