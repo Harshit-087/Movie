@@ -38,11 +38,7 @@ export default function Info(){
         const fetchInfo=async()=>{
 
 
-         const infoResult = await axios.get(`https://api.themoviedb.org/3/movie/${id}`,{
-           params: {
-            api_key:process.env.NEXT_PUBLIC_API_KEY,
-            language:"en-US"
-        }});
+         const infoResult = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`)
 const data =  infoResult.data;
 console.log("Movie info:", data);
 
