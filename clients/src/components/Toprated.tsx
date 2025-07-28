@@ -34,7 +34,7 @@ export default function TopRated(){
         //axios give json data direclty and no need of await it send in once in body
         //in fetch res.json() get stream of data which return promise for which we await 
         
-        const data =  result.data.toprated;
+        const data =  result.data.data;
         console.log("top rated data :",result)
         setTopRated(data);
     }
