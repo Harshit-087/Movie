@@ -35,7 +35,7 @@ export default function TopRated(){
         //in fetch res.json() get stream of data which return promise for which we await 
         
         const data =  result.data;
-        console.log("top rated data :",result)
+        // console.log("top rated data :",result)
         setTopRated(data);
     }
     fetchTopRated();

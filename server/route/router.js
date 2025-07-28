@@ -11,7 +11,7 @@ router.use(cors())
 router.get("/player", async (req, res) => {
   const id = req.query.id;
   const result = await axios.get(`${process.env.VIDEO_API}/${id}`);
-  console.log("bbb:", result);
+  // console.log("bbb:", result);
 
   res.status(200).json( result.config.url ); // ⚠️ result.url is NOT valid
 });
@@ -29,7 +29,7 @@ router.get("/movie",async(req,res)=>{
 router.get("/video", async (req, res) => {
   const params = req.query.video_id;
   const result = await axios.get(`${process.env.VIDEO_API}/${params}`);
-  console.log("aaaa:", result);
+  // console.log("aaaa:", result);
 
   res.status(200).json( result.config.url ); // ⚠️ result.url is NOT valid
 });

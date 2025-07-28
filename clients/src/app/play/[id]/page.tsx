@@ -7,7 +7,7 @@ export default function Player(){
      const[data,setData]=useState<string|null>()
    const params = useParams();
    const id=params.id;
-    console.log("play /[id]:",id)
+    // console.log("play /[id]:",id)
       useEffect(()=>{
        if(id){
         const fetchInfo=async()=>{
@@ -15,7 +15,7 @@ export default function Player(){
 
          const infoResult = await axios.get(`/route/router3?id=${id}`)
       const data =  infoResult.data.url;
-      console.log("Movie info:", data);
+    //   console.log("Movie info:", data);
 
             setData(data);
             

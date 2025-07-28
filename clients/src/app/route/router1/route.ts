@@ -11,7 +11,7 @@ export  async function GET(req:NextRequest){
     const result = await axios.get(`${process.env.BACKEND_URL}/video/?video_id=${value}`)
     
     const data= result.data;
-    console.log("route:",data)
+    // console.log("route:",data)
     return NextResponse.json(data)
 }
 
