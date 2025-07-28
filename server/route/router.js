@@ -10,7 +10,7 @@ const router = express.Router();
 router.use(cors())
 router.get("/player", async (req, res) => {
   const id = req.query.id;
-  const result = await fetch(`${process.env.VIDEO_API}/${id}`);
+  const result = await axios.get(`${process.env.VIDEO_API}/${id}`);
   console.log("aaaa:", result);
 
   res.status(200).json( result.config.url ); // ⚠️ result.url is NOT valid
@@ -28,13 +28,13 @@ router.get("/movie",async(req,res)=>{
 })
 router.get("/video", async (req, res) => {
   const params = req.query.video_id;
-  const result = await fetch(`${process.env.VIDEO_API}/${params}`);
+  const result = await axios.get(`${process.env.VIDEO_API}/${params}`);
   console.log("aaaa:", result);
 
-  res.status(200).json( result.url ); // ⚠️ result.url is NOT valid
+  res.status(200).json( result.config.url ); // ⚠️ result.url is NOT valid
 });
 
-router.get("/nowplayed",async(req,res)=>{
+router.get("/nowplay",async(req,res)=>{
   // const value = req.query
   //  console.log("apikey:",process.env.TMDB_API_KEY)
   const result=await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`);
