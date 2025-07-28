@@ -22,7 +22,7 @@ router.get("/movie",async(req,res)=>{
     const title = req.query.t;
     const result=await axios.get(`http://www.omdbapi.com/?apikey=${process.env.MOVIE_API_KEY}&t=${title}`);
     const data =  result.data.results;
-    console.log("backend movie title:",data)
+    console.log("backend movie title:",result)
     res.status(200).json(data);
 
 })
