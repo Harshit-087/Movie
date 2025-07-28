@@ -20,7 +20,7 @@ export default  function Page(){
     const result =await axios.get("/route/router1?video_id=tt0108052")
   
       const data = result.data
-      console.log("data:",data)
+      // console.log("data:",data)
       setUrl(data)
     
       
