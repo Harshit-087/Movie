@@ -25,7 +25,7 @@ export default function TopRated(){
 
    useEffect(()=>{
     const fetchTopRated=async()=>{
-        const result = await axios.get(`http://localhost:4000/toprated`,{
+        const result = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/toprated`,{
           headers:{
              "content-type":"application/json"
           }

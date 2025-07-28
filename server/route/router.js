@@ -8,6 +8,16 @@ const router = express.Router();
 
 
 router.use(cors())
+router.get("/player", async (req, res) => {
+  const id = req.query.id;
+  const result = await fetch(`${process.env.VIDEO_API}/${id}`);
+  console.log("aaaa:", result);
+
+  res.status(200).json( result.config.url ); // ⚠️ result.url is NOT valid
+});
+
+
+
 router.get("/movie",async(req,res)=>{
     const title = req.query.t;
     const result=await axios.get(`http://www.omdbapi.com/?apikey=${process.env.MOVIE_API_KEY}&t=${title}`);
@@ -18,10 +28,10 @@ router.get("/movie",async(req,res)=>{
 })
 router.get("/video", async (req, res) => {
   const params = req.query.video_id;
-  const result = await fetch(`https://vidsrc.net/embed/${params}`);
+  const result = await fetch(`${process.env.VIDEO_API}/${params}`);
   console.log("aaaa:", result);
 
-  res.status(200).json({ data: result.url }); // ⚠️ result.url is NOT valid
+  res.status(200).json( result.url ); // ⚠️ result.url is NOT valid
 });
 
 router.get("/nowplayed",async(req,res)=>{

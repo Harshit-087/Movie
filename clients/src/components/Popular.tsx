@@ -27,7 +27,7 @@ export default function Popular(){
     const fetchPopular=async()=>{
         // console.log("API KEY:", process.env.NEXT_PUBLIC_API_KEY);
 
-        const popularResult=await axios.get(`http://localhost:4000/popular`);
+        const popularResult=await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/popular`);
         const popularData= popularResult.data.popular;
         console.log("popular data:",popularResult);
         setPopular(popularData)
