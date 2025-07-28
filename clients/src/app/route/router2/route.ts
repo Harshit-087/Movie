@@ -13,6 +13,6 @@ export async function GET(req:NextRequest){
 
     
     return(
-       NextResponse.json({data}) 
+       NextResponse.json(data) 
     )
 }

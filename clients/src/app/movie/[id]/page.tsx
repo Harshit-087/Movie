@@ -58,8 +58,8 @@ console.log("Movie info:", data);
                if (info && info.title) {
                    const result = await axios.get(`/route/router2?title=${info.title}`);
                    const data1 =result.data;
-                   console.log("page.tsx omdb id:",data1.data)
-                   setOmdbId(data1.data)
+                   console.log("page.tsx omdb id:",data1)
+                   setOmdbId(data1)
                }
            }
            fetchOmdb();
