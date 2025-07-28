@@ -28,7 +28,7 @@ export default function NowPlaying(){
         // console.log("API KEY:", process.env.NEXT_PUBLIC_API_KEY);
 
         const NowPlayingResult=await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/nowplaying`);
-        const NowPlayingData= NowPlayingResult.data.data;
+        const NowPlayingData= NowPlayingResult.data;
         console.log("NowPlaying data:",NowPlayingResult);
         setNow(NowPlayingData)
     }

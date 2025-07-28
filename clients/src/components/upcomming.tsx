@@ -26,7 +26,7 @@ export default function Upcoming(){
    useEffect(()=>{
     const fetchUpcoming=async()=>{
         const upcomingResult=await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/upcom`);
-        const upcomingData= upcomingResult.data.data;
+        const upcomingData= upcomingResult.data;
         console.log("upcoming data:",upcomingResult);
         setUpcoming(upcomingData)
     }
