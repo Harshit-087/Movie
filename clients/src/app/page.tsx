@@ -9,6 +9,7 @@ import NowPlaying from "../components/NowPlaying";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Aside from "@/components/Aside"
+import axios from "axios"
 
 export default  function Page(){
  
@@ -16,15 +17,13 @@ export default  function Page(){
 
  useEffect(()=>{
   const fetchUrl=async()=>{
-    const result =await fetch("/route/router1?video_id=tt0108052")
-    if(result.ok){
-      const data =await result.json()
+    const result =await axios.get("/route/router1?video_id=tt0108052")
+  
+      const data = result.data
       console.log("data:",data)
-      setUrl(data.embedUrl)
+      setUrl(data)
     
-      }else{
-      console.error("failed to fetch video url")
-    }
+      
   }
   fetchUrl();
  },[])
