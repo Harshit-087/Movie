@@ -2,12 +2,37 @@ import express  from "express";
 import dotenv from"dotenv"
 import cors from "cors"
 import axios from "axios"
+
+import User from "./model/user.schema.js"
 dotenv.config()
 
 const router = express.Router();
 
 
 router.use(cors())
+
+router.post("/signin",async(req,res)=>{
+  const {userName,password,number,email}= req.body;
+    const createdUser = await User.Create({
+      userName,
+      password,
+      number,
+      email
+    })
+    res.status(200).json({msg:"success user register"})
+})
+
+router.post("/login",async()=>{
+  const {userName,email,password}=req.body
+  const userExist=await User.findOne({email:email})
+  if(userExist){
+    res.status(200).json({msg:"login success"})
+  }else{
+    res.status(500).json({msg:"no user exist"})
+  }
+})
+
+
 router.get("/player", async (req, res) => {
   const id = req.query.id;
   const result = await axios.get(`${process.env.VIDEO_API}/${id}`);

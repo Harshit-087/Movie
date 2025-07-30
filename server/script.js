@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
 import router from "./route/router.js"
+import connectionDB from "./db/connection.js"
 
 const app =express();
-
+connectionDB();
 app.use(cors());
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 
 app.use("/",router)
 

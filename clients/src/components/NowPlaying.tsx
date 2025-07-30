@@ -39,7 +39,7 @@ export default function NowPlaying(){
       <>
      <section className="w-screen max-sm:h-[40vh]  sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[70vh]  flex flex-col gap-8 mb-24">
     <h1 className=" text-black text-4xl px-8">What&apos; s New</h1>
-    <div className="overflow-x-auto   w-screen  flex gap-4 mx-12 bg-white    ">
+    <div className="overflow-x-auto   w-screen  flex gap-4 mx-12     ">
             {now&& now.map((movie:NowPlayingData)=>(
                 <motion.div initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
