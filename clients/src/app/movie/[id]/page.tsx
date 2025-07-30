@@ -98,8 +98,8 @@ export default function Info() {
         <div className="absolute inset-0 z-0">
           <Image
             src={`https://image.tmdb.org/t/p/w1280${info.backdrop_path}`}
-            alt=""
-            fill
+            alt="#"
+            fill                                               
             className="object-cover opacity-10 blur-sm"
             priority
           />
@@ -318,7 +318,7 @@ export default function Info() {
               Movie not found
             </h2>
             <p className="text-gray-400">
-              We couldn't retrieve details for this movie.
+              We couldn&apos;t retrieve details for this movie.
             </p>
             <Link href="/" className="inline-block mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-medium transition-colors duration-300">
               Back to Home
