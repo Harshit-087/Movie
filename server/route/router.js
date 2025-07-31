@@ -3,7 +3,7 @@ import dotenv from"dotenv"
 import cors from "cors"
 import axios from "axios"
 
-import User from "./model/user.schema.js"
+import User from "../model/user.schema.js"
 dotenv.config()
 
 const router = express.Router();
