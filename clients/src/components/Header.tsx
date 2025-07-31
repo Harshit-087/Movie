@@ -5,7 +5,7 @@ export default function Header(){
    
     return(
      <>
-     <nav className="bg-black text-xl font-serif h-[80px] w-screen flex justify-around items-center gap-8 sticky top-0 left-0">
+     <nav className="bg-black text-xl font-serif h-[80px] w-full flex grow-1 shrink-0 justify-around items-center gap-8 sticky top-0 left-0 ">
         <Image src={"/logo.jpg"} alt="Cine" width="61" height="60" className="!ml-2 " ></Image>
         <ul className="w-[50%] flex justify-evenly items-center  ">
             <li className="header-Effect">Home</li>

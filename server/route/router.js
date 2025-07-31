@@ -13,7 +13,7 @@ router.use(cors())
 
 router.post("/signin",async(req,res)=>{
   const {userName,password,number,email}= req.body;
-    const createdUser = await User.Create({
+    const createdUser = await User.create({
       userName,
       password,
       number,
