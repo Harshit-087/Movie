@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const connectionDB=async(req,res)=>{
     try{
-        await mongoose.connect(`${process.env.MONGODB_URL}/Movie`,{
+        await mongoose.connect(`${process.env.MONGODB_URL}Movie`,{
             useNewUrlParser:true,
             useUnifiedTopology: true
         })
