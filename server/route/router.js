@@ -2,7 +2,7 @@ import express  from "express";
 import dotenv from"dotenv"
 import cors from "cors"
 import axios from "axios"
-
+ 
 import User from "../model/user.schema.js"
 dotenv.config()
 
