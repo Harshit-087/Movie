@@ -1,7 +1,9 @@
 "use client"
 
 import React,{useState} from "react"
+import Link from "next/link"
 import axios from "axios"
+import {useRouter} from "next/navigation"
 
 interface Detail{
     userName:string,
@@ -15,12 +17,15 @@ export default function Login(){
         email:"",
         password:""
     })
+    const router = useRouter();
+    const [msg,setMsg]=useState<string|null>(null)
 
     const handleInputChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
       const {name ,value} = e.target;
       setData(prev=>({
         ...prev,[name]:value
       }))
+      
     }
     
     const handleSubmit=async(e:React.ChangeEvent<HTMLFormElement>)=>{
@@ -28,6 +33,13 @@ export default function Login(){
         const result = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`)
         const data = result.data.msg;
         console.log(data)
+        setMsg(data);
+        alert(msg);
+        
+        setTimeout(()=>{
+          router.push("/")
+        },100)
+      
     }
     
     return(
@@ -67,6 +79,9 @@ export default function Login(){
         />
 
         <button type="submit">Submit</button>
+        <Link href="/signin">
+        <button >create new account</button>
+        </Link>
         </form>
         </div>
         </>

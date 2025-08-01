@@ -47,7 +47,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li><Link href="/">Instagram</Link></li>
             <li><Link href="/">Twitter</Link></li>
-            <li><Link href="/">YouTube</Link></li>
+            <li><Link href="/">YouTube</Link></li> 
           </ul>
         </div>
       </div>

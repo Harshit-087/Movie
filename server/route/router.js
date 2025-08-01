@@ -16,13 +16,13 @@ router.post("/signin",async(req,res)=>{
     const createdUser = await User.create({
       userName,
       password,
-      number,
+      number, 
       email
     })
     res.status(200).json({msg:"success user register"})
 })
 
-router.post("/login",async()=>{
+router.post("/login",async(req,res)=>{
   const {userName,email,password}=req.body
   const userExist=await User.findOne({email:email})
   if(userExist){
