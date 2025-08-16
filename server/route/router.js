@@ -2,7 +2,7 @@ import express  from "express";
 import dotenv from"dotenv"
 import cors from "cors"
 import axios from "axios"
- 
+import bcrypt from "bcrypt" 
 import User from "../model/user.schema.js"
 dotenv.config()
 
@@ -11,11 +11,23 @@ const router = express.Router();
 
 router.use(cors())
 
+router.get("/search/movie",async(req,res)=>{
+  const {query}= req.query;
+  res.status(200).json({msg:"search movie",query});
+})
+
+
+
 router.post("/signin",async(req,res)=>{
   const {userName,password,number,email}= req.body;
+  bcrypt.salt(10,async(err,salt)=>{
+    bcrypt.hash(password,salt,async(err,hash)=>{
+      const new_password=hash;
+    })
+  })
     const createdUser = await User.create({
       userName,
-      password,
+      password:new_password,
       number, 
       email
     })
@@ -23,8 +35,23 @@ router.post("/signin",async(req,res)=>{
 })
 
 router.post("/login",async(req,res)=>{
-  const {userName,email,password}=req.body
-  const userExist=await User.findOne({email:email})
+  const {email,password}=req.body
+  bcrypt.compare(password,new_password,async(err,result)=>{
+    if (result){
+      const userExist=await User.find({email:email})
+  console.log("user exist:",userExist)
+  if(userExist){
+    res.status(200).json({msg:"login success"})
+  }else{
+    res.status(500).json({msg:"no user exist"})
+  }
+
+    }else{
+      console.log("error in login:",err);
+    }
+  })
+  const userExist=await User.find({email:email})
+  console.log("user exist:",userExist)
   if(userExist){
     res.status(200).json({msg:"login success"})
   }else{

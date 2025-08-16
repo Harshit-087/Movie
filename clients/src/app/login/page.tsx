@@ -28,13 +28,13 @@ export default function Login(){
       
     }
     
-    const handleSubmit=async(e:React.ChangeEvent<HTMLFormElement>)=>{
+    const handleSubmit=async(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
-        const result = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`)
-        const data = result.data.msg;
-        console.log(data)
-        setMsg(data);
-        alert(msg);
+        const result = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,{email:data.email,password:data.password})
+        const response = result.data.msg;
+        console.log(response)
+        setMsg(response);
+        // alert(msg);
         
         setTimeout(()=>{
           router.push("/")
@@ -44,9 +44,9 @@ export default function Login(){
     
     return(
         <>
-                <div className="bg-red-200 flex p-24">
-          <h1 className="text-5xl font-serif text-black">Sign In:</h1>
-        <form onSubmit={handleSubmit} method="Post" action="/" encType="application/x-www-form-urlencoded" className="bg-white flex flex-col p-24 ">
+                <div className="bg-red-200 flex p-24 flex-col   items-center justify-center h-screen">
+          <h1 className="text-5xl font-serif text-black">log In:</h1>
+        <form onSubmit={handleSubmit} method="Post" action="/" encType="application/x-www-form-urlencoded" className="bg-white flex flex-col p-24 rounded-lg shadow-md w-96   items-center justify-center">
         
         <label htmlFor="userName">Username:</label>
         <input type="text"

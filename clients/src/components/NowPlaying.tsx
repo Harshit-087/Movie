@@ -37,7 +37,7 @@ export default function NowPlaying(){
    
     return(
       <>
-     <section className="w-screen max-sm:h-[40vh]  sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[70vh]  flex flex-col gap-8 mb-24">
+     <section className="w-screen max-sm:h-[40vh]  sm:h-[60vh] md:h-[70vh] lg:h-[60vh] xl:h-[70vh]  flex flex-col gap-8 mb-24  rounded-lg shadow-lg">
     <h1 className=" text-black text-4xl px-8">What&apos; s New</h1>
     <div className="overflow-x-auto   w-screen  flex gap-4 mx-12     ">
             {now&& now.map((movie:NowPlayingData)=>(
@@ -57,7 +57,7 @@ export default function NowPlaying(){
     />
   </Link>
    
-  <section className="mt-2 text-center opacity-50 max-sm:hidden">
+  <section className="mt-2 text-center  ">
     <h3 className="font-serif text-black text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl flex justify-around">
       {movie.vote_average}/10
       {movie.popularity > 200.0 ? (

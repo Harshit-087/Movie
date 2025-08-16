@@ -37,15 +37,16 @@ export default function Upcoming(){
    
     return(
         <>
-        <section className="w-screen max-sm:h-[30vh]  sm:h-[50vh] md:h-[60vh] lg:h-[70vh]  flex flex-col gap-8">
-    <h1 className=" text-black text-4xl px-8">Trending</h1>
-    <div className="overflow-x-auto   w-screen  flex gap-4 mx-12 overflow-y-hidden ">
+        <section className="w-screen max-sm:h-[40vh]  sm:h-[60vh] md:h-[70vh] lg:h-[60vh] xl:h-[70vh]  flex flex-col gap-8 mb-24  rounded-lg shadow-lg">
+ <h1 className=" text-black text-4xl px-8">Trending</h1>
+    <div className="overflow-x-auto   w-screen  flex gap-4 mx-12     ">
             {upcoming && upcoming.map((movie:upcomingData)=>(
-< motion.div initial={{opacity:0,x:30}} 
-   animate={{opacity:1 ,x:0}}
-   transition={{duration:0.6,ease:"easeOut"}}
+                <motion.div initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      
                key={movie.id}
-               className="flex-none w-[140px] sm:w-[180px] md:w-[210px] lg:w-[230px] shadow-lg  hide-scrollbar rounded-lg">
+               className="flex-none w-[140px] sm:w-[180px] md:w-[210px] lg:w-[230px] overflow-hidden shadow-lg hide-scrollbar  rounded-lg">
   <Link href={`/movie/${movie.id}`}>
     <Image
       src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -55,8 +56,8 @@ export default function Upcoming(){
       className="rounded-lg object-cover w-full h-auto"
     />
   </Link>
-
-  <section className="mt-2 text-center max-sm:hidden">
+   
+  <section className="mt-2 text-center   ">
     <h3 className="font-serif text-black text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl flex justify-around">
       {movie.vote_average}/10
       {movie.popularity > 200.0 ? (
@@ -77,3 +78,6 @@ export default function Upcoming(){
         </>
     )
 }
+
+
+ 

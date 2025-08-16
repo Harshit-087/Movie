@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import router from "./route/router.js"
 import connectionDB from "./db/connection.js"
+import bcrypt from "bcrypt"
 
 const app =express();
 connectionDB();

@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
       hostname: 'image.tmdb.org',
     },
   ],
-}
+},  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
 
 };
 

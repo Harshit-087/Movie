@@ -7,7 +7,7 @@ export default function TopLoader({data}:{data:string|null}) {
         md:h-[80%] md:w-[85%]
         lg:h-[80%] lg:w-[80%]
         xl:h-[90%] xl:w-[80%]
-        rounded-lg flex justify-center items-center  mt-6!">
+        rounded-lg flex justify-center items-center  mt-6! overflow-y-hidden">
       <iframe src={data!}  allow="autoplay; fullscreen " className=" w-full h-full object-contain"  ></iframe>
 
         </div>

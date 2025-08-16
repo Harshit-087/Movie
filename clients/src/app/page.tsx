@@ -37,7 +37,7 @@ export default  function Page(){
     <div className="
     w-screen max-sm:h-[30vh]
     sm:h-[50vh] md:h-[70vh] lg:h-[80vh]   xl:h-[90vh] 
-    flex flex-col grow-1 shrink-0  justify-center items-center  gap-12 ">
+    flex flex-col grow-1 shrink-0  justify-center items-center  gap-12 bg-white">
     
       <Header/>
     {url?<TopLoader data={url}/>:<p>loading....</p>}
@@ -50,10 +50,11 @@ export default  function Page(){
     <Toprated/>
     <Upcomming/>
     <NowPlaying/>
+    <Footer/>
    </section>
     
     
-    <Footer/>
+    
     </>
   )
 }

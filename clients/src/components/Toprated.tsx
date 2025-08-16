@@ -45,9 +45,9 @@ export default function TopRated(){
 
     return(
      <>
-         <section className=" w-screen max-sm:h-[30vh]  sm:h-[50vh] md:h-[60vh] lg:h-[70vh] flex flex-col gap-8 ">
+         <section className=" w-screen max-sm:h-[40vh]  sm:h-[60vh] md:h-[70vh] lg:h-[60vh] flex flex-col gap-8 bg-white">
     <h1 className=" text-black text-4xl px-8 ">Top Rated</h1>
-    <div className="overflow-x-auto   w-screen  flex gap-4  overflow-y-hidden ">
+    <div className="overflow-x-auto   w-screen  flex gap-4   ">
             {toprated && toprated.map((movie:TopRatedData)=>(
               <motion.div
                 initial={{opacity:0,x:30}}

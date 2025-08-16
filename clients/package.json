@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.24.2",
+    "@emotion/react": "^11.14.0",
     "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.0",
     "framer-motion": "^12.23.9",
+    "jsonwebtoken": "^9.0.2",
     "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
