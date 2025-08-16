@@ -29,6 +29,8 @@ export default function Header(){
        fetchMovies();
     }
         },[movie])
+
+      
     
 
     return(
@@ -45,7 +47,9 @@ export default function Header(){
       
               <ul className="w-[50%] flex justify-evenly items-center  ">
             <li className="header-Effect">Home</li>
-            <li className="header-Effect">Movies</li>
+            <Link href="/movies">
+            <li className="header-Effect">Movies</li></Link>
+           
             <li className="header-Effect">Tv</li>
             <li className="header-Effect">Cast</li>
             <li className="header-Effect">More</li>

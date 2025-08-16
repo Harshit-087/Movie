@@ -13,10 +13,15 @@ router.use(cors())
 
 router.get("/search/movie",async(req,res)=>{
   const {query}= req.query;
+  const result= await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`);
   res.status(200).json({msg:"search movie",query});
 })
 
-
+router.get("/movies",async(req,res)=>{
+  const result = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`);
+  const response = result.data.results;
+  res.status(200).json({movies:response})
+})
 
 router.post("/signin",async(req,res)=>{
   const {userName,password,number,email}= req.body;

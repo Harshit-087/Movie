@@ -1,7 +1,7 @@
 "use client";
 
 import {useState,useEffect} from "react"
-import TopLoader from "@/components/Toploader";
+import TopLoader from "@/components/HeroSection";
 import Toprated from "@/components/Toprated";
 import Popular from "../components/Popular";
 import Upcomming from "../components/upcomming";
