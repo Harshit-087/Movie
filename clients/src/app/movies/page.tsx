@@ -18,7 +18,7 @@ export default function AllMovies(){
     return(
          <>
          <div className="w-screen h-screen flex justify-center items-center">
-            {allMovies[0].title}
+            {allMovies.length>0? allMovies[0].title:" hello "}
          </div>
          </>
     )
